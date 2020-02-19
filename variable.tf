@@ -1,3 +1,10 @@
+##############################################################################
+# Variables File
+# 
+# Here is where we store the default values for all the variables used in our
+# Terraform code. If you create a variable with no default, the user will be
+# prompted to enter it (or define it via config file or command line flags.)
+
 variable "subscriptionId" {
 }
 
@@ -10,43 +17,29 @@ variable "clientSecret" {
 variable "tenantId" {
 }
 
-variable  "rg" {
-  description = "The name of the resource group in which to create the virtual network."
-  default     = "EsunRG"
+variable "resource_group" {
+  description = "The name of your Azure Resource Group."
+  default     = "Terraform-Azure-Beginners"
 }
 
-variable "rg_prefix" {
-  description = "The shortened abbreviation to represent your resource group that will go on the front of some resources."
-  default     = "azuretg"
+variable "prefix" {
+  description = "This prefix will be included in the name of some resources."
+  default     = "tfazuepre"
 }
 
 variable "hostname" {
-  description = "VM name referenced also in storage-related names."
-  default     = "tf"
-}
-
-variable "dns_name" {
-  description = " Label for the Domain Name. Will be used to make up the FQDN. If a domain name label is specified, an A DNS record is created for the public IP in the Microsoft Azure DNS system."
-  default     = "vm"
-}
-
-variable "lb_ip_dns_name" {
-  description = "DNS for Load Balancer IP"
-  default     = "lb1"
-}
-
-variable "vm_count_per_subnet" {
-  description = "count per subnet"
-  default     = 2
+  description = "Virtual machine hostname. Used for local hostname, DNS, and storage-related names."
+  default     = "vmazure"
 }
 
 variable "region" {
-  description = "The location/region where the virtual network is created. Changing this forces a new resource to be created."
+  description = "The region where the virtual network is created."
+  default     = "westus"
 }
 
-variable "network" {
-  description = "The name for the virtual network."
-  default     = "AutoNetwork"
+variable "virtual_network_name" {
+  description = "The name for your virtual network."
+  default     = "vnetazure"
 }
 
 variable "address_space" {
@@ -60,51 +53,52 @@ variable "subnet_prefix" {
 }
 
 variable "storage_account_tier" {
-  description = "Defines the Tier of storage account to be created. Valid options are Standard and Premium."
+  description = "Defines the storage tier. Valid options are Standard and Premium."
   default     = "Standard"
 }
 
 variable "storage_replication_type" {
-  description = "Defines the Replication Type to use for this storage account. Valid options include LRS, GRS etc."
+  description = "Defines the replication type to use for this storage account. Valid options include LRS, GRS etc."
   default     = "LRS"
-}
-variable "subnet"{
-description = "Defines the subnetname"
-default = "autosubnet"
 }
 
 variable "vm_size" {
   description = "Specifies the size of the virtual machine."
-  default     = "Standard_D1_v2"
+  default     = "Standard_D2_v2"
 }
 
 variable "image_publisher" {
-  description = "name of the publisher of the image (az vm image list)"
-  default     = "MicrosoftWindowsServer"
+  description = "Name of the publisher of the image (az vm image list)"
+  default     = "Canonical"
 }
 
 variable "image_offer" {
-  description = "the name of the offer (az vm image list)"
-  default     = "WindowsServer"
+  description = "Name of the offer (az vm image list)"
+  default     = "UbuntuServer"
 }
 
 variable "image_sku" {
-  description = "image sku to apply (az vm image list)"
-  default     = "2012-R2-Datacenter"
+  description = "Image SKU to apply (az vm image list)"
+  default     = "16.04-LTS"
 }
 
 variable "image_version" {
-  description = "version of the image to apply (az vm image list)"
+  description = "Version of the image to apply (az vm image list)"
   default     = "latest"
 }
 
 variable "admin_username" {
-  description = "administrator user name"
-  default     = "vmadmin"
+  description = "Administrator user name"
+  default     = "adminuser"
 }
 
 variable "admin_password" {
-  description = "administrator password (recommended to disable password auth)"
-  default     = "admin01!"
+  description = "Administrator password"
+  default     = "Adminpassword123!"
+}
+
+variable "source_network" {
+  description = "Allow access from this network prefix. Defaults to '*'."
+  default     = "*"
 }
 

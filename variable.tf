@@ -19,17 +19,17 @@ variable "tenantId" {
 
 variable "resource_group" {
   description = "The name of your Azure Resource Group."
-  default     = "Terraform-Azure-Beginners2"
+  default     = "Terraform-Azure-Beginners3"
 }
 
 variable "prefix" {
   description = "This prefix will be included in the name of some resources."
-  default     = "tfazuepre2"
+  default     = "tfazuepre3"
 }
 
 variable "hostname" {
   description = "Virtual machine hostname. Used for local hostname, DNS, and storage-related names."
-  default     = "vmazure2"
+  default     = "vmazure3"
 }
 
 variable "region" {
@@ -39,7 +39,7 @@ variable "region" {
 
 variable "virtual_network_name" {
   description = "The name for your virtual network."
-  default     = "vnetazure2"
+  default     = "vnetazure3"
 }
 
 variable "address_space" {

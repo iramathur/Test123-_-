@@ -24,12 +24,12 @@ variable "resource_group" {
 
 variable "prefix" {
   description = "This prefix will be included in the name of some resources."
-  default     = "tfazuepre3"
+  default     = "tfazuepre4"
 }
 
 variable "hostname" {
   description = "Virtual machine hostname. Used for local hostname, DNS, and storage-related names."
-  default     = "vmazure3"
+  default     = "vmazure4"
 }
 
 variable "region" {
@@ -39,7 +39,7 @@ variable "region" {
 
 variable "virtual_network_name" {
   description = "The name for your virtual network."
-  default     = "vnetazure3"
+  default     = "vnetazure4"
 }
 
 variable "address_space" {

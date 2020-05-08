@@ -19,7 +19,7 @@ variable "tenantId" {
 
 variable "resource_group" {
   description = "The name of your Azure Resource Group."
-  default     = "Terraform-Azure-Beginners3"
+  default     = "Terraform-Azure-Beginners-4"
 }
 
 variable "prefix" {

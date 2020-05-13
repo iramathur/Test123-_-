@@ -110,7 +110,7 @@ resource "azurerm_public_ip" "tf-guide-pip" {
   location            = var.region
   resource_group_name = azurerm_resource_group.tf_azure_guide.name
   allocation_method   = "Dynamic"
-  domain_name_label   = var.hostname
+  domain_name_label   = "${var.hostname}-${random_id.server.hex}-ip
 }
 
 # And finally we build our virtual machine. This is a standard Ubuntu instance.

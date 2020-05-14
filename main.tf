@@ -57,7 +57,7 @@ resource "azurerm_subnet" "subnet" {
 
 # Security group to allow inbound access on port 80 (http) and 22 (ssh)
 resource "azurerm_network_security_group" "tf-guide-sg" {
-  name                = "${var.prefix}-${random_id.server.hex}-sg"
+  name                = "${var.prefix}-${random_id.server.hex}-sg3"
   location            = var.region
   resource_group_name = azurerm_resource_group.tf_azure_guide.name
 

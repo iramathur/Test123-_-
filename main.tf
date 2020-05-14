@@ -1,5 +1,5 @@
 ##############################################################################
-# * HashiCorp Beginner's Guide to Using Terraform on Azure check
+# * HashiCorp Beginner's Guide to Using Terraform on Azure 
 # 
 # This Terraform configuration will create the following:
 #
